@@ -24,5 +24,5 @@ class User(db.Model):
         onupdate=db.func.now())
 
 # Uncommenta dessa rader och kör en gång för att skapa tabellen
-#with app.app_context():
-#    db.create_all()
+with app.app_context():
+    db.create_all()
