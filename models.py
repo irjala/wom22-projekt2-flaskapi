@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 # load_dotenv()
 
 # configure the SQLite database, relative to the app instance folder
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DB_URL')
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ['APP_SETTINGS']
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # SQLAlchemy (postgresql)
