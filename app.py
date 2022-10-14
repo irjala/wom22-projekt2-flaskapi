@@ -3,7 +3,7 @@ from flask_app import app # importera Flask-appen
 import routes # importera routes
 
 @app.route("/")
-def index():
+def test():
     ret = { 
         'msg': 'Flask works on Rahti!', 
         'cheer': os.environ.get('ENV_VAR', 'This is a test') 

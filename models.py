@@ -1,13 +1,11 @@
 import os
-# from dotenv import load_dotenv
-from flask_sqlalchemy import SQLAlchemy
 
 from flask_app import app # importera Flask-appen
+from flask_sqlalchemy import SQLAlchemy
 # load_dotenv()
 
 # configure the SQLite database, relative to the app instance folder
-# app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DB_URL')
-app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///db.sqlite3'
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DB_URL')
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # SQLAlchemy (postgresql)
