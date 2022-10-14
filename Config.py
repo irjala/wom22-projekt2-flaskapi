@@ -1,9 +1,18 @@
-class Config():
+import os
+basedir = os.path.abspath(os.path.dirname(__file__))
 
-    # OBSERVE this is a test file, delete later
-    # Set up the App SECRET_KEY
-    SECRET_KEY = 'S_U_perS3crEt_KEY#9999'
-
-    # This will create a file in <app> FOLDER
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///db.sqlite3'
+class Config(object):
+    DEBUG = False
+    TESTING = False
+    CSRF_ENABLED = True
+    SECRET_KEY = 'b\'\xc5>`\xe3C\x19\x13\xdc\xeaV\xefT\x9d\xa4x\xae\''
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+class ProductionConfig(Config):
+    DEBUG = False
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+
+class DevelopmentConfig(Config):
+    ENV="development"
+    DEVELOPMENT=True
+    SQLALCHEMY_DATABASE_URI="sqlite:///db.sqlite3"
