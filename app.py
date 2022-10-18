@@ -7,7 +7,7 @@ load_dotenv()
 app = Flask(__name__)
 
 @app.route("/")
-def index():
+def test():
     ret = { 
         'msg': 'Flask works on Rahti!', 
         'env': os.environ.get('ENV_VAR', 'Cannot find variable ENV_VAR') 
