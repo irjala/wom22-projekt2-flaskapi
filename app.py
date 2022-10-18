@@ -1,12 +1,16 @@
 import os
-from flask_app import app # importera Flask-appen
-import routes # importera routes
+from flask import Flask, request # importera Flask-appen
+from dotenv import load_dotenv
+
+load_dotenv()
+
+app = Flask(__name__)
 
 @app.route("/")
 def index():
     ret = { 
         'msg': 'Flask works on Rahti!', 
-        'cheer': os.environ.get('ENV_VAR', 'This is a test') 
+        'env': os.environ.get('ENV_VAR', 'Cannot find variable ENV_VAR') 
     }
 
     return ret
